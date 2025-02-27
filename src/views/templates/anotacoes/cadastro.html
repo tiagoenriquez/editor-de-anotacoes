@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "menu.html" %}
+<main>
+    <h1>Cadastro de Anotação</h1>
+    <form action="{{ url_for('anotacao.inserir') }}" method="post">
+        <div class="row">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" autofocus required />
+        </div>
+        <button type="submit">Cadastrar</button>
+    </form>
+</main>
+{% endblock %}

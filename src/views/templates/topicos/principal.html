@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "menu.html" %}
+<main>
+    <h1>{{ topico.nome }}</h1>
+    <div class="caminho">
+        <span>Caminho: </span>
+        {% for topico in caminho %}
+        <a href="{{ url_for('topico.mostrar', id=topico.id) }}">{{ topico.nome }}</a>
+        {% endfor %}
+    </div>
+    {% if topico.descricao %}
+    <h2 class="conceito"><b>Conceito: </b>{{ topico.descricao }}</h2>
+    {% endif %}
+    <table>
+        <tbody>
+            {% for topico in topicos %}
+            <tr>
+                <td>
+                    <form action="{{ url_for('topico.mostrar', id=topico.id) }}" method="get">
+                        <button type="submit">Selecionar</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{{ url_for('topico.editar', id=topico.id) }}" method="get">
+                        <button type="submit">Atualizar</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{{ url_for('topico.excluir', id=topico.id) }}" method="post">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>
+                <td>{{ topico.nome }}</td>
+                <td class="descriicao">{{ topico.descricao }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="row">
+        <form action="{{ url_for('topico.cadastrar', supertopico_id=topico.id) }}" method="get">
+            <button type="submit">Inserir Subtópico</button>
+        </form>
+        <form action="{{ url_for('topico.editar', id=topico.id) }}" method="get">
+            <button type="submit">Atualizar</button>
+        </form>
+        <form action="{{ url_for('topico.excluir', id=topico.id) }}" method="post">
+            <button type="submit">Excluir</button>
+        </form>
+    </div>
+</main>
+{% endblock %}

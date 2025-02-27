@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "menu.html" %}
+<main>
+    <h1>Cadastro de Tópico para {{ supertopico.nome }}</h1>
+    <form action="{{ url_for('topico.inserir') }}" method="post">
+        <div class="row">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" autofocus required />
+        </div>
+        <label for="descricao" class="label-for-textarea">Descrição</label>
+        <textarea name="descricao" id="descricao" cols="80" rows="4"></textarea>
+        <input type="hidden" name="supertopico_id" value="{{ supertopico.id }}" />
+        <button type="submit">Cadastrar</button>
+    </form>
+    <form action="{{ url_for('topico.mostrar', id=supertopico.id) }}" method="get">
+        <button type="submit">Voltar</button>
+    </form>
+</main>
+{% endblock %}
