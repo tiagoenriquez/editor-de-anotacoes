@@ -18,17 +18,17 @@
             <tr>
                 <td>
                     <form action="{{ url_for('topico.mostrar', id=topico.id) }}" method="get">
-                        <button type="submit">Selecionar</button>
+                        <button type="submit" title="Selecionar">👉️</button>
                     </form>
                 </td>
                 <td>
                     <form action="{{ url_for('topico.editar', id=topico.id) }}" method="get">
-                        <button type="submit">Atualizar</button>
+                        <button type="submit" title="Atualizar">✏️</button>
                     </form>
                 </td>
                 <td>
                     <form action="{{ url_for('topico.excluir', id=topico.id) }}" method="post">
-                        <button type="submit">Excluir</button>
+                        <button type="submit" title="Excluir">🗑️</button>
                     </form>
                 </td>
                 <td>{{ topico.nome }}</td>

@@ -9,14 +9,19 @@
             <input type="text" name="nome" id="nome" value="{{ topico.nome }}" autofocus required />
         </div>
         <label for="descricao" class="label-for-textarea">Descrição</label>
+        {% if topico.supertopico_id %}
         <textarea
             name="descricao"
             id="descricao"
             cols="80"
             rows="4"
-        >{% if topico.descricao %}{{ topico.descricao }}{% endif %}</textarea>
+        >{{ topico.descricao }}</textarea>
+        {% endif %}
         <input type="hidden" name="supertopico_id" value="{{ topico.supertopico_id }}" />
         <button type="submit">Atualizar</button>
+    </form>
+    <form action="{{ url_for('topico.mostrar', id=topico.id) }}" method="get">
+        <button type="submit">Voltar</button>
     </form>
 </main>
 {% endblock %}
