@@ -11,7 +11,7 @@ Esta aplicação tem a pretensão de ajudar quem pretende estudar a realizar sua
 <br>
 Nesta aplicação, anotações são espécies especiais de tópicos, porque não possuem descrição nem tópico hierarquicamente superior.
 <br><br>
-Esta aplicação foi desenvolvida em Python, com o framework Flask e a visualização foi desenvolvida com o template engine Flask. Por enquanto, para iniciar esta aplicação, é preciso rodar alguns comando em um terminal ou CMD:
+Esta aplicação foi desenvolvida em Python, com o framework Flask e a visualização foi desenvolvida com o template engine Jinja. Por enquanto, para iniciar esta aplicação, é preciso rodar alguns comando em um terminal ou CMD:
 
 <br>
 <li>Para baixar a aplicação</li>
